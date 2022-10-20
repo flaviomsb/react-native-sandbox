@@ -1,7 +1,7 @@
 import React from 'react';
 import List from '../components/List';
 
-export default function TexasCitiesListScreen() {
+export default function FlatListScreen() {
   const cities = [
     { name: 'Austin' },
     { name: 'San Antonio' },

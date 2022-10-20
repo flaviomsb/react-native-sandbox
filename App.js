@@ -1,30 +1,27 @@
-import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from './src/screens/HomeScreen';
-import TexasCitiesListScreen from './src/screens/TexasCitiesListScreen';
-import DevInfoScreen from './src/screens/DevInfoScreen';
+import FlatListScreen from './src/screens/FlatListScreen';
 import ImageListScreen from './src/screens/ImageListScreen';
 import CounterScreen from './src/screens/CounterScreen';
 import InputValidationScreen from './src/screens/InputValidationScreen';
 import LayoutScreen from './src/screens/LayoutScreen';
 
-const navigator = createStackNavigator(
-  {
-    Home: HomeScreen,
-    TexasCitiesList: TexasCitiesListScreen,
-    DevInfo: DevInfoScreen,
-    ImageList: ImageListScreen,
-    Counter: CounterScreen,
-    InputValidation: InputValidationScreen,
-    Layout: LayoutScreen,
-  },
-  {
-    initialRouteName: 'Home',
-    defaultNavigationOptions: {
-      title: 'App',
-    },
-  },
-);
+const Stack = createNativeStackNavigator();
 
-export default createAppContainer(navigator);
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home" screenOptions={{ title: 'Sandbox' }}>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="FlatList" component={FlatListScreen} />
+        <Stack.Screen name="InputValidation" component={InputValidationScreen} />
+        <Stack.Screen name="Counter" component={CounterScreen} />
+        <Stack.Screen name="ImageList" component={ImageListScreen} />
+        <Stack.Screen name="Layout" component={LayoutScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
