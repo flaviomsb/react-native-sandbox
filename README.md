@@ -2,4 +2,5 @@
 React native studying time
 
 `npm install`
+
 `npm run start`
