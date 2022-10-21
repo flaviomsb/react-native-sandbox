@@ -5,7 +5,7 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 export default function NavButton({ label, onPress }) {
   return (
     <TouchableOpacity onPress={onPress}>
-      <Text style={styles.navButton}>&gt; {label}</Text>
+      <Text style={styles.navButton}>{label}</Text>
     </TouchableOpacity>
   );
 }
@@ -18,7 +18,7 @@ NavButton.propTypes = {
 const styles = StyleSheet.create({
   navButton: {
     fontSize: 20,
-    marginVertical: 12,
+    marginVertical: 8,
     color: '#0d47a1',
   },
 });
