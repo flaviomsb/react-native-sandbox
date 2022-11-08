@@ -8,6 +8,7 @@ import ImageListScreen from './src/screens/ImageListScreen';
 import CounterScreen from './src/screens/CounterScreen';
 import InputValidationScreen from './src/screens/InputValidationScreen';
 import LayoutScreen from './src/screens/LayoutScreen';
+import SvgSamples from './src/screens/SvgSamples';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ export default function App() {
         <Stack.Screen name="Counter" component={CounterScreen} />
         <Stack.Screen name="ImageList" component={ImageListScreen} />
         <Stack.Screen name="Layout" component={LayoutScreen} />
+        <Stack.Screen name="Svg" component={SvgSamples} />
       </Stack.Navigator>
     </NavigationContainer>
   );

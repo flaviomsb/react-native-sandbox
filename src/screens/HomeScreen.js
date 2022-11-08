@@ -10,6 +10,7 @@ export default function HomeScreen({ navigation: { navigate } }) {
       <NavButton label="State Demo" onPress={() => navigate('Counter')} />
       <NavButton label="Input Validation Demo" onPress={() => navigate('InputValidation')} />
       <NavButton label="Layout Demo" onPress={() => navigate('Layout')} />
+      <NavButton label="SVG Samples" onPress={() => navigate('Svg')} />
     </View>
   );
 }
