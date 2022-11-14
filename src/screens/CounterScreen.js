@@ -28,11 +28,13 @@ export default function CounterScreen() {
         <Button
           label="Increase +"
           color="#7fffd4"
+          style={{ marginRight: 4 }}
           onPress={() => dispatch({ type: types.INCREASE, payload: 1 })}
         />
         <Button
           label="Decrease -"
           color="#ffb6c1"
+          style={{ marginLeft: 4 }}
           onPress={() => dispatch({ type: types.DECREASE, payload: 1 })}
         />
       </View>
@@ -50,6 +52,7 @@ const styles = StyleSheet.create({
   },
   buttonBar: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   counter: {
     fontWeight: '700',

@@ -8,7 +8,7 @@ export default function Button({ label, color, onPress, style }) {
       style={[styles.button, { backgroundColor: color }, style]}
       onPress={onPress}
     >
-      <Text>{label}</Text>
+      <Text style={styles.label}>{label}</Text>
     </TouchableOpacity>
   );
 };
@@ -29,6 +29,12 @@ const styles = StyleSheet.create({
   button: {
     borderRadius: 4,
     padding: 12,
-    margin: 6,
+    marginVertical: 6,
+  },
+  label: {
+    fontSize: 16,
+    textTransform: 'uppercase',
+    fontWeight: '500',
+    textAlign: 'center',
   },
 });
