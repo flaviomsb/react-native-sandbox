@@ -6,7 +6,7 @@ export default function Notify({ action }) {
   const messages = {
     created: 'Blog created successfully!',
     deleted: 'Blog deleted!',
-    edited: 'Blog changes saved',
+    updated: 'Blog changes saved',
     error: 'An error has occurred. Please try again.'
   };
 
@@ -33,13 +33,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   created: {
-    backgroundColor: '#add8e6',
+    backgroundColor: '#7cfc00',
   },
-  edited: {
-    backgroundColor: '#7fffd4',
+  updated: {
+    backgroundColor: '#87cefa',
   },
   deleted: {
-    backgroundColor: '#ffb6c1',
+    backgroundColor: '#f5deb3',
   },
   error: {
     backgroundColor: '#ffb6c1',

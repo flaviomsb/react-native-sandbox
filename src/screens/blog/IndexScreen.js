@@ -11,12 +11,21 @@ export default function IndexScreen({ navigation: { navigate }, route }) {
   const renderRow = useCallback(({ item }) => {
     return (
       <TouchableOpacity onPress={() => navigate('ShowBlog', { id: item.id })}>
-      <View style={styles.row}>
-        <Text style={styles.title}>{item.title}</Text>
-        <TouchableOpacity onPress={() => deletePost(item.id)}>
-          <Feather style={styles.icon} name="trash" />
-        </TouchableOpacity>
-      </View>
+        <View style={styles.row}>
+          <Text style={styles.title}>{item.title}</Text>
+          <View style={styles.actions}>
+            <TouchableOpacity onPress={() => {
+              navigate('UpdateBlog', { id: item.id });
+            }}>
+              <Feather style={styles.icon} name="edit" />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+              deletePost(item.id, () => navigate('Blogs', { action: 'deleted' }));
+            }}>
+              <Feather style={styles.icon} name="trash" />
+            </TouchableOpacity>
+          </View>
+        </View>
       </TouchableOpacity>
     );
   });
@@ -45,7 +54,11 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
   },
+  actions: {
+    flexDirection: 'row',
+  },
   icon: {
+    paddingHorizontal: 4,
     fontSize: 24,
   },
 });

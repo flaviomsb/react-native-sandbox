@@ -4,9 +4,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Blogs from './IndexScreen';
 import ShowBlog from './ShowScreen';
 import CreateBlog from './CreateScreen';
+import UpdateBlog from './UpdateScreen';
 
 import { Provider as BlogProvider } from '../../context/BlogContext';
-import AddIcon from '../../components/AddIcon';
+import HeaderIcon from '../../components/HeaderIcon';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,12 +20,21 @@ export default function App() {
             component={Blogs}
             options={({ navigation: { navigate } }) => ({
               headerRight: () => (
-                <AddIcon onPress={() => navigate('CreateBlog')} />
+                <HeaderIcon name="plus" onPress={() => navigate('CreateBlog')} />
               ),
             })}
           />
-          <Stack.Screen name="ShowBlog" component={ShowBlog} />
+          <Stack.Screen
+            name="ShowBlog"
+            component={ShowBlog}
+            options={({ navigation: { navigate }, route }) => ({
+              headerRight: () => (
+                <HeaderIcon name="edit" onPress={() => navigate('UpdateBlog', { id: route.params?.id })} />
+              ),
+            })}
+          />
           <Stack.Screen name="CreateBlog" component={CreateBlog} />
+          <Stack.Screen name="UpdateBlog" component={UpdateBlog} />
       </Stack.Navigator>
     </BlogProvider>
   );
