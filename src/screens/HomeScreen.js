@@ -1,17 +1,58 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import NavButton from '../components/NavButton';
+import { Button } from 'react-native-paper';
 
 export default function HomeScreen({ navigation: { navigate } }) {
   return (
     <View style={styles.container}>
-      <NavButton label="FlatList Example" onPress={() => navigate('FlatList')} />
-      <NavButton label="Component Composition" onPress={() => navigate('ImageList')} />
-      <NavButton label="State Demo" onPress={() => navigate('Counter')} />
-      <NavButton label="Input Validation Demo" onPress={() => navigate('InputValidation')} />
-      <NavButton label="Layout Demo" onPress={() => navigate('Layout')} />
-      <NavButton label="SVG Samples" onPress={() => navigate('Svg')} />
-      <NavButton label="CRUD Example" onPress={() => navigate('Crud')} />
+      <Button
+        icon='view-list'
+        style={styles.navButton}
+        mode='contained'
+        onPress={() => navigate('FlatList')}
+      >
+        FlatList Example
+      </Button>
+      <Button
+        icon='vector-combine'
+        style={styles.navButton}
+        mode='contained'
+        onPress={() => navigate('ImageList')}
+      >
+        Component Composition
+      </Button>
+      <Button
+        icon='state-machine'
+        style={styles.navButton}
+        mode='contained'
+        onPress={() => navigate('Counter')}
+      >
+        State Demo
+      </Button>
+      <Button
+        icon='form-textbox'
+        style={styles.navButton}
+        mode='contained'
+        onPress={() => navigate('InputValidation')}
+      >
+        Input Validation Demo
+      </Button>
+      <Button
+        icon='grid'
+        style={styles.navButton}
+        mode='contained'
+        onPress={() => navigate('Layout')}
+      >
+        Layout Demo
+      </Button>
+      <Button
+        icon='view-dashboard-edit'
+        style={styles.navButton}
+        mode='contained'
+        onPress={() => navigate('Crud')}
+      >
+        CRUD Example
+      </Button>
     </View>
   );
 }
@@ -20,6 +61,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingLeft: 16,
+    padding: 8,
+  },
+  navButton: {
+    marginVertical: 4,
   },
 });

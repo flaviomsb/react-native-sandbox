@@ -12,7 +12,7 @@ export default function LayoutScreen() {
       <Button
         key={opt}
         label={opt}
-        style={selected === opt ? styles.layoutButtonActive : {}}
+        style={selected === opt ? styles.layoutButtonActive : { marginHorizontal: 2 }}
         onPress={() => onChange(opt)}
       />
     ));
